@@ -180,6 +180,38 @@ int main()
 не использовать, либо использовать так, чтобы организаторы конференции
 об этом не знали.
 
+\section{Доказательства}
+
+$$\int_0^t g(x)dW(x)$$
+
+\begin{equation}
+f(v) = 4 \pi v^2 \left( \frac{m}{2 \pi T} \right)^{3/2} \exp \left[ - \frac{m v^2/2}{T} \right].
+\label{eq:maxwell_dist}
+\end{equation}
+
+\begin{enumerate}
+	\item Зная конкретный вид $f(v)$, численно табулируется функция распределения
+	\begin{equation}
+	F_i (v_i) = \int\limits_{- \infty}^{v_i} f(v') dv'.
+	\end{equation}
+	\item По данным таблицы значений $\left\{ F_i ; v_i  \right\}$, интерполируется функция  $F^{-1}(v) = v(F)$.
+	\item В силу свойств функции распределения $F \in \left[0,1\right]$. Тогда, очевидно, необходимо задать случайную величину в диапазоне от 0 до 1, подставить в полученную функцию и получить желаемый результат (рисунок \ref{fig:He(T=273)}).
+\end{enumerate}
+\begin{figure}[h!]
+	\centering
+%%	\includegraphics[width=0.85\linewidth]{./fig/ch4/He(T=273)}
+	\caption{Проверка процедуры задания случайной величины по распределению Максвелла для гелия при $T = 273 \text{ К}$}
+	\label{fig:He(T=273)}
+\end{figure}
+
+Далее требуется найти вектор магнитной индукции $\vec{B}_k = \left\{ B^{\rho}_k; B_k^z \right\}$, причём необходимо учесть, что её модуль определяется согласно формуле  а направление согласно правилу правого винта:
+%%\eqref{eq:calcBcyl},
+\begin{eqnarray}
+B^{\rho}_k &=& \frac{\mu_0 R_k'}{2} \frac{I_k \left( R_k' - \rho_n \right)}{\left( \left( R_k' - \rho_n \right)^2 + \left( z_k - z_n \right)^2 \right)^{3/2}}, \\ \nonumber \\ \nonumber \\
+
+B^{z}_k &=& \frac{\mu_0 R_k'}{2} \frac{I_k \left( z_k - z_n \right)}{\left( \left( R_k' - \rho_n \right)^2 + \left( z_k - z_n \right)^2 \right)^{3/2}}.
+\end{eqnarray}
+
 \section{Заключение}
 
 В документе были представлены основные стили текста и макросы, которые
